@@ -1,0 +1,595 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+main, section {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+}
+section {
+  right: 0px;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.4);
+}
+main {
+  left: 0px;
+}
+.loginForm, .registerForm {
+  z-index: 100;
+}
+.solarSystem {
+  width: inherit;
+  height: inherit;
+  display: grid;
+  place-items: center;
+  background-image: url("https://cdn-cf-east.streamable.com/image/kklt3.jpg?Expires=1693043940&Signature=PmCOjr-~k9hk-AU2gsLUpKYP7dG~dz4UwZ7ng6LNJX7VgIDFZ5upoqbsVU0HVlRYG6qcYSsVNAh9Q~KeNnT4wJiQ3vVP1FUSWYOvPkoCW4SH0lk3ExgJNrg01izDi3SNn8RAp4jGcCizmf5kHhgMBvAshgO0jRsIsfDuoTFb5TkCHJ2Lu8NFPX68cMe~QKOGeeT0WjlR2TRFHInxxQHfZh2PkNZfCswNI-xXyGY6CfBNPRErm8GnSYYwwR3PLbmL3hj7DFXUbYKRTJrIILd8maFxLVe3JwF-Y7oatDHiZhz9nwXzzX1OfHImGuh5ckMrOmx3ug5Hhxd1NAAvCJ0ssA__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ");
+  background-size: contain;
+}
+img {
+  position: relative;
+}
+.mercury,
+.venus,
+.earth,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* THE SUN */
+.sun {
+  position: fixed;
+  height: 112px;
+  width: 120px;
+  border-radius: 56px;
+  overflow: hidden;
+  z-index: 9;
+}
+.sun > img {
+  height: 184px;
+  position: relative;
+  border-radius: 92px;
+  bottom: 32px;
+  right: 33px;
+}
+
+/* MERCURY */
+.mercury {
+  height: 400px;
+  width: 400px;
+  border-radius: 200px;
+  animation: spinCycleMerc infinite 10s linear;
+}
+.mercury > img {
+  height: 20px;
+  left: 184px;
+  top: 367px;
+  animation: mercury infinite 10s linear;
+  border-radius: 10px;
+}
+@keyframes spinCycleMerc {
+  0% {
+    transform: translateY(10px) rotateX(85deg) rotate(0deg);
+    z-index: 10;
+  }
+  25% {
+    transform: translateY(10px) rotateX(85deg) rotate(-90deg);
+    z-index: 8;
+  }
+  75% {
+    z-index: 8;
+  }
+  100% {
+    transform: translateY(10px) rotateX(85deg) rotate(-360deg);
+    z-index: 10;
+  }
+}
+@keyframes mercury {
+  0% {
+    transform: rotateZ(0deg) rotateX(-85deg) scale(1.5);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-85deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-85deg) scale(0.3);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-85deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-85deg) scale(1.5);
+  }
+}
+
+/* VENUS */
+.venus {
+  height: 600px;
+  width: 600px;
+  border-radius: 300px;
+  animation: spinCycleVen infinite 13.7s linear;
+}
+.venus > img {
+  animation: venus infinite 13.7s linear;
+  left: 300px;
+  height: 30px;
+  border-radius: 15px;
+}
+@keyframes venus {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.3);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(1.5);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.3);
+  }
+}
+@keyframes spinCycleVen {
+  0% {
+    transform: translateY(20px) rotateX(82deg) rotate(0deg);
+    z-index: 7;
+  }
+  25% {
+    z-index: 11;
+  }
+  100% {
+    transform: translateY(20px) rotateX(82deg) rotate(-360deg);
+    z-index: 7;
+  }
+}
+
+/* EARTH */
+.earth {
+  height: 800px;
+  width: 800px;
+  border-radius: 400px;
+  animation: spinCycleEar infinite 16.1s linear;
+}
+.earthContainer {
+  position: relative;
+  animation: earth infinite 16.1s linear;
+  left: 400px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+.earthContainer > img {
+  height: 40px;
+  border-radius: 20px;
+}
+
+@keyframes earth {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.3);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(1.5);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.3);
+  }
+}
+@keyframes spinCycleEar {
+  0% {
+    transform: translateY(26px) rotateX(82deg) rotate(0deg);
+    z-index: 6;
+  }
+  25% {
+    z-index: 12;
+  }
+  100% {
+    transform: translateY(26px) rotateX(82deg) rotate(-360deg);
+    z-index: 6;
+  }
+}
+
+/* MOON */
+
+.moon {
+  height: 10px;
+  width: 10px;
+  position: relative;
+  bottom: 33px;
+  right: 20px;
+  animation: moonOrbit infinite 3s linear;
+}
+.moon > img {
+  height: 10px;
+  border-radius: 5px;
+}
+
+@keyframes moonOrbit {
+  0% {
+    transform: translateX(0px);
+    z-index: 13;
+  }
+  12.5% {
+    transform: translateX(20px);
+    z-index: 13;
+  }
+  25% {
+    transform: translateX(40px);
+    z-index: 13;
+  }
+  37.5% {
+    transform: translateX(60px);
+    z-index: 13;
+  }
+  50% {
+    transform: translateX(80px);
+    z-index: 13;
+  }
+  62.5% {
+    transform: translateX(60px);
+    z-index: 5;
+  }
+  75% {
+    transform: translateX(40px);
+    z-index: 5;
+  }
+  87.5% {
+    transform: translateX(20px);
+    z-index: 5;
+  }
+  100% {
+    transform: translateX(0px);
+    z-index: 5;
+  }
+}
+
+/* MARS */
+.mars {
+  height: 1000px;
+  width: 1000px;
+  border-radius: 500px;
+  animation: spinCycleMar infinite 19.8s linear;
+}
+.mars > img {
+  animation: mars infinite 19.8s linear;
+  left: 580px;
+  height: 25px;
+  border-radius: 12.5px;
+}
+@keyframes mars {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.3);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(1.5);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.3);
+  }
+}
+@keyframes spinCycleMar {
+  0% {
+    transform: translateY(35px) rotateX(82deg) rotate(0deg);
+    z-index: 5;
+  }
+  25% {
+    z-index: 13;
+  }
+  100% {
+    transform: translateY(35px) rotateX(82deg) rotate(-360deg);
+    z-index: 5;
+  }
+}
+
+/* JUPITER */
+.jupiter {
+  height: 1200px;
+  width: 1200px;
+  border-radius: 600px;
+  animation: spinCycleJup infinite 36.8s linear;
+}
+.jupiter > img {
+  animation: jupiter infinite 36.8s linear;
+  left: 600px;
+  height: 80px;
+  border-radius: 40px;
+}
+@keyframes jupiter {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.3);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(1.5);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.3);
+  }
+}
+@keyframes spinCycleJup {
+  0% {
+    transform: translateY(45px) rotateX(82deg) rotate(0deg);
+    z-index: 4;
+  }
+  30% {
+    z-index: 14;
+  }
+  70% {
+    z-index: 14;
+  }
+  80% {
+    z-index: 14;
+  }
+  100% {
+    transform: translateY(45px) rotateX(82deg) rotate(-360deg);
+    z-index: 4;
+  }
+}
+
+/* SATURN */
+.saturn {
+  height: 1600px;
+  width: 1600px;
+  border-radius: 800px;
+  animation: spinCycleSat infinite 49.6s linear;
+}
+.saturn > img {
+  animation: saturn infinite 49.6s linear;
+  left: 850px;
+  height: 80px;
+  border-radius: 40px;
+}
+@keyframes saturn {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.3);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(0.9);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(1.5);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(0.9);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.3);
+  }
+}
+@keyframes spinCycleSat {
+  0% {
+    transform: translateY(70px) rotateX(82deg) rotate(0deg);
+    z-index: 3;
+  }
+  30% {
+    z-index: 15;
+  }
+  70% {
+    z-index: 15;
+  }
+  80% {
+    z-index: 3;
+  }
+  100% {
+    transform: translateY(70px) rotateX(82deg) rotate(-360deg);
+    z-index: 3;
+  }
+}
+
+/* URANUS */
+.uranus {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 1000px;
+  animation: spinCycleUra infinite 71s linear;
+}
+.uranus > img {
+  animation: uranus infinite 71s linear;
+  left: 1000px;
+  height: 50px;
+  border-radius: 25px;
+}
+@keyframes uranus {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.1);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(2);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(1);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.1);
+  }
+}
+@keyframes spinCycleUra {
+  0% {
+    transform: translateY(95px) rotateX(82deg) rotate(0deg);
+    z-index: 2;
+  }
+  30% {
+    z-index: 16;
+  }
+  70% {
+    z-index: 16;
+  }
+  80% {
+    z-index: 2;
+  }
+  100% {
+    transform: translateY(95px) rotateX(82deg) rotate(-360deg);
+    z-index: 2;
+  }
+}
+
+/* NEPTUNE */
+.neptune {
+  height: 2800px;
+  width: 2800px;
+  border-radius: 1400px;
+  animation: spinCycleNep infinite 87.6s linear;
+}
+.neptune > img {
+  animation: neptune infinite 87.6s linear;
+  left: 1400px;
+  height: 50px;
+  border-radius: 25px;
+}
+@keyframes neptune {
+  0% {
+    transform: rotateZ(0deg) rotateX(-82deg) scale(0.1);
+  }
+  25% {
+    transform: rotateZ(90deg) rotateX(-82deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(180deg) rotateX(-82deg) scale(2);
+  }
+  75% {
+    transform: rotateZ(270deg) rotateX(-82deg) scale(1);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateX(-82deg) scale(0.1);
+  }
+}
+@keyframes spinCycleNep {
+  0% {
+    transform: translateY(147px) rotateX(82deg) rotate(0deg);
+    z-index: 1;
+  }
+  30% {
+    z-index: 17;
+  }
+  70% {
+    z-index: 17;
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    transform: translateY(147px) rotateX(82deg) rotate(-360deg);
+    z-index: 1;
+  }
+}
+
+/* ================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+body {
+    background-color: dodgerblue;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+a, a:visited {
+    color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}
