@@ -5,17 +5,25 @@ body{
   overflow-x: hidden;
 }
 main, section {
-  width: 50vw;
   height: 100vh;
   position: absolute;
 }
 section {
-  right: 0px;
+  width: 50vw;
+  right: 25vw;
   padding: 1rem;
   background-color: rgba(0,0,0,0.4);
 }
 main {
+  width: 100vw;
   left: 0px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+section {
+  width: 86vw;
+  right: 7vw;
+}
 }
 .loginForm, .registerForm {
   z-index: 100;
