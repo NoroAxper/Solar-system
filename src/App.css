@@ -31,8 +31,9 @@ section {
 .solarSystem {
   width: inherit;
   height: inherit;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("https://cdn-cf-east.streamable.com/image/kklt3.jpg?Expires=1693043940&Signature=PmCOjr-~k9hk-AU2gsLUpKYP7dG~dz4UwZ7ng6LNJX7VgIDFZ5upoqbsVU0HVlRYG6qcYSsVNAh9Q~KeNnT4wJiQ3vVP1FUSWYOvPkoCW4SH0lk3ExgJNrg01izDi3SNn8RAp4jGcCizmf5kHhgMBvAshgO0jRsIsfDuoTFb5TkCHJ2Lu8NFPX68cMe~QKOGeeT0WjlR2TRFHInxxQHfZh2PkNZfCswNI-xXyGY6CfBNPRErm8GnSYYwwR3PLbmL3hj7DFXUbYKRTJrIILd8maFxLVe3JwF-Y7oatDHiZhz9nwXzzX1OfHImGuh5ckMrOmx3ug5Hhxd1NAAvCJ0ssA__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ");
   background-size: contain;
 }
